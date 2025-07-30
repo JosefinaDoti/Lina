@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lina - Tienda</title>
+    <link rel="shortcut icon" href="../assets/Lina iso.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body class="grid-layout">
+        <header>
+            <nav class="navbar navbar-expand-md w-100">
+                <div class="container-fluid d-flex justify-content-between align-items-center">
+                    <!-- branding (logo + Lina) -->
+                    <div class="branding d-flex align-items-center">
+                        <a href="./index.html">
+                            <img src="../assets/Lina iso.png" alt="logo de lina" title="logo" class="logo">
+                        </a>
+                        <h1 class="m-0 ms-2">Lina</h1>
+                    </div>
+
+                    <!-- boton hamburguesa -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuLina" aria-controls="menuLina" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- barra navegación -->
+                    <div class="collapse navbar-collapse justify-content-end" id="menuLina">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="./galeria.html">Galería</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./tienda.html">Tienda</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./sobrenosotros.html">Sobre nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+    <main>
+        <section class="tienda-texto">  
+            <h2>Nuestra tienda</h2>
+            <p>Conocé nuestras prendas confeccionadas en lino y algodón 100% natural. Elegí piezas que hablen de vos.</p>
+        </section>
+
+<!-- Sin java no se puede hacer la pasarela de pagos, por lo tanto hay que poner comprar por wpp -->
+
+        <section class="productos">
+            <article class="item-producto">
+                <img src="../assets/producto 1.jpg" alt="Camisa blanca" title="Camisa Olivia">
+                <h3>Camisa Olivia</h3>
+                <p>Lino natural, color blanco.</p>
+                <p class="precio">$2.200</p>
+                <a href="https://wa.me/59812345678" class="link-whatsapp" target="_blank">Comprar por WhatsApp</a>
+            </article>
+
+            <article class="item-producto">
+                <img src="../assets/producto 4.jpg" alt="Camisa beige" title="Camisa Alfonsina">
+                <h3>Camisa Alfonsina</h3>
+                <p>Lino natural, color beige.</p>
+                <p class="precio">$2.200</p>
+                <a href="https://wa.me/59812345678" class="link-whatsapp" target="_blank">Comprar por WhatsApp</a>
+            </article>
+
+            <article class="item-producto">
+                <img src="../assets/producto 2.jpg" alt="Set blanco camisa y short con cortes" title="Set Venecia">
+                <h3>Set Venecia</h3>
+                <p>Algodón, color blanco.</p>
+                <p class="precio">$3.500</p>
+                <a href="https://wa.me/59812345678" class="link-whatsapp" target="_blank">Comprar por WhatsApp</a>
+            </article>
+
+            <article class="item-producto">
+                <img src="../assets/producto 3.jpg" alt="Set blanco camisa y short" title="Set Lía">
+                <h3>Set Lía</h3>
+                <p>Algodón, color crudo.</p>
+                <p class="precio">$3.500</p>
+                <a href="https://wa.me/59812345678" class="link-whatsapp" target="_blank">Comprar por WhatsApp</a>
+            </article>
+
+            <article class="item-producto">
+                <img src="../assets/producto 5.jpg" alt="Pantalón beige title="Pantalón Luca">
+                <h3>Pantalón Luca</h3>
+                <p>Lino natural, color beige.</p>
+                <p class="precio">$2.900</p>
+                <a href="https://wa.me/59812345678" class="link-whatsapp" target="_blank">Comprar por WhatsApp</a>
+            </article>
+
+            <article class="item-producto">
+                <img src="../assets/producto 6.jpg" alt="Pantalon blanco" title="Pantalón Río">
+                <h3>Pantalón Río</h3>
+                <p>Lino natural, color blanco.</p>
+                <p class="precio">$2.200</p>
+                <a href="https://wa.me/59812345678" class="link-whatsapp" target="_blank">Comprar por WhatsApp</a>
+            </article>
+
+            <article class="item-producto">
+                <img src="../assets/producto 7.png" alt="Vestido blanco" title="Vestido Nudo">
+                <h3>Vestido Nudo</h3>
+                <p>Lino natural, color blanco.</p>
+                <p class="precio">$4.000</p>
+                <a href="https://wa.me/59812345678" class="link-whatsapp" target="_blank">Comprar por WhatsApp</a>
+            </article>
+        </section>
+
+        <section class="info-envios">
+    <h3>Información de envíos</h3>
+    <p>Enviamos a todo Uruguay. El costo se calcula según tu ubicación.</p>
+    <p>Envío gratuito en compras mayores a $2.500.</p>
+        </section>
+
+    </main>
+
+        <footer>
+        <p>© 2025 Lina. Derechos reservados.</p>
+        <p>Gracias por visitar Lina.</p>
+        <nav>
+            <h2>Seguinos en nuestras redes:</h2>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="../assets/facebook.png" alt="Enlace a Facebook" title="Facebook">
+            </a>
+            <a href="https://x.com/" target="_blank">
+                <img src="../assets/x.png" alt="Enlace a X" title="X">
+            </a>
+            <a href="https://www.tiktok.com/es-419/" target="_blank">
+                <img src="../assets/tiktok.png" alt="Enlace a Tiktok" title="Tiktok">
+            </a>
+        </nav>
+    </footer>
+
+        <a href="https://wa.me/59812345678" target="_blank" class="boton-whatsapp">
+        <img src="../assets/whatsapp.png" alt="Enlace a Whatsapp" title="boton-whatsapp">
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
