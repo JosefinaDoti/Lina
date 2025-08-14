@@ -1,0 +1,47 @@
+@use 'variables' as v;
+
+.galeria-texto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.6;
+    padding: 2vh;
+    
+    h2 {
+        margin-bottom: 1rem;
+        font-family: v.$fuente-titulo;
+        color: v.$color-secundario;
+    }
+
+    p {
+        margin: 0.5rem 0;
+        font-family: v.$fuente-texto;
+        color: v.$color-principal;
+    }
+}
+
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*3 columnas en escritorio*/
+    gap: 2vw;
+    padding: 2vw;
+    justify-items: center;
+    
+    img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border: 2px solid #a6a58a;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+}
+
+/*proxima entrega agregar animacion para que cada foto se agrande con el hover*/
+
+//en celulares pasa a 1 columna
+@include v.mobile {
+    .galeria-fotos {
+        grid-template-columns: 1fr;
+    }
+}

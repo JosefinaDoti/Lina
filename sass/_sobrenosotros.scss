@@ -1,0 +1,38 @@
+@use 'variables' as v;
+
+main section img {
+    width: 40vw;
+    height: auto;
+    margin: 2vh auto;
+    border: 2px solid v.$color-borde;
+}
+
+.sobre-nosotros {
+    display: flex;
+    flex-direction: column;
+    gap: 8vh;
+    padding: 8vh 4vw;
+}
+
+.bloque {
+    display: flex;
+    align-items: center;
+    gap: 6vh;
+    flex-wrap: wrap;
+
+    &.invertido {
+        flex-direction: row-reverse;
+    }
+
+    .imagen, .texto {
+        flex: 1 1 45%;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        border: 2px solid v.$color-borde;
+    }
+}
+

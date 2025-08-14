@@ -1,0 +1,40 @@
+@use 'variables' as v;
+
+footer {
+    background-color: v.$color-header-footer;
+    text-align: center;
+    padding: 2vh;
+    font-size: 0.9rem;
+    color: v.$color-principal;
+
+    img {
+        height: 3vh;
+        width: auto;
+        margin: 0 1vw;
+    }
+}
+
+.boton-whatsapp {
+    height: 8vh; 
+    width: auto; 
+    position: fixed; 
+    bottom: 2vh; 
+    right: 2vw; 
+    z-index: 2; 
+    animation: pulse-whatsapp 2.5s infinite ease-in-out; 
+}
+
+@keyframes pulse-whatsapp {
+    0%   { 
+        transform: scale(1); 
+    }
+    10%  { 
+        transform: scale(1.15); 
+    } 
+    20%  { 
+        transform: scale(1); 
+    }  
+    100% { 
+        transform: scale(1); 
+    } 
+}

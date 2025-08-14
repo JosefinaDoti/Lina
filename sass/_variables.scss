@@ -1,0 +1,67 @@
+//tipografias
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+
+//colores
+$color-principal: #3e4634;
+$color-secundario: #676b3f;
+$color-fondo: #f5f1e8;
+$color-hover: #d4d4b0;
+$color-header-footer: #f0e7d9;
+$color-borde: #a6a58a;
+$color-boton-activo: #4e512f;
+
+//tipos de letra
+$fuente-titulo: 'Libre Baskerville', serif;
+$fuente-texto: 'Source Sans 3', sans-serif;
+
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+//placeholder botones
+/*%btn-nav {
+    color: $color-principal;
+    background: transparent;
+    border: 1px solid $color-principal;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    
+    &:hover {
+        background: $color-hover;
+}
+}*/
+
+/*estilos globales*/
+body {
+    font-family: $fuente-texto;
+    background-color: $color-fondo;
+    color: $color-principal;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+
+    > header { grid-row: 1; }
+    > main { grid-row: 2; }
+    > footer { grid-row: 3; }
+}
+
+a {
+    color: $color-principal;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: $fuente-titulo;
+    color: $color-secundario;
+}
+

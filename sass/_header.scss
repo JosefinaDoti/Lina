@@ -1,0 +1,74 @@
+@use 'variables' as v;
+
+header {
+    background-color: v.$color-header-footer;
+    padding: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+}
+
+    .branding {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+
+    h1 {
+        margin: 0;
+        font-size: 2rem;
+        font-family: v.$fuente-titulo
+    }
+
+    img.logo {
+        height: 10vh;
+        width: auto;
+    }
+}
+
+nav ul {
+    list-style: none;
+    font-size: medium;
+    display: flex;
+    gap: 2vw;
+    margin: 2vw;
+    padding: 0;
+    align-items: center;
+
+    li a:hover {
+        background-color: v.$color-hover;
+        border-radius: 3px;
+        padding: 0.2em 0.5em;
+    }
+}
+
+@include v.mobile {
+    header {
+        padding: 1vh;
+    }
+
+    .navbar .container-fluid {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .branding {
+        flex-direction: row;
+        align-items: center;
+        gap: 1vw;
+
+        h1 { 
+            display: none; }
+
+        .logo {
+            height: 8vh;
+        }
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+}

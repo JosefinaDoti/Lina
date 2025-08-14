@@ -1,0 +1,94 @@
+@use 'variables' as v;
+
+body {
+    font-family: v.$fuente-texto;
+    background-color: v.$color-fondo;
+    color: v.$color-principal;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+
+    > header { grid-row: 1; }
+    > main { grid-row: 2; }
+    > footer { grid-row: 3; }
+}
+
+a {
+    color: v.$color-principal;
+    text-decoration: none;
+
+    &:visited {
+        color: #4e4e4e;
+    }
+}
+
+h1, h2, h3 {
+    font-family: v.$fuente-titulo;
+    color: v.$color-secundario;
+}
+
+button:active {
+    background-color: v.$color-boton-activo;
+}
+
+/*boton de wpp*/
+.boton-whatsapp {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    width: 6vh;
+    height: 6vh;
+    z-index: 9999;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+/*index*/
+.introduccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+    padding: 3vh 3vw;
+}
+
+    .texto-introduccion {
+        max-width: 40vw;
+    }
+
+    .carousel-inner {
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: auto;
+    height: 90vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+@include v.mobile {
+    .introduccion {
+        flex-direction: column-reverse;
+    }
+
+    .texto-introduccion,
+    .carousel-inner {
+        max-width: 90vw;
+    }
+
+    .texto-introduccion {
+        text-align: center;
+    }
+}

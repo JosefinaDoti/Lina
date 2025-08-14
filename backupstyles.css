@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+
+/* padding es la distancia para adentro, el rellenom, y margin la distancia hacia los elementos exteriores. gap es la distancia entre elementos dentro de un contenedor, elementos hijos */
+/* usar viewports como unidad
+hoover por ahora no va */
+/*LAYOUT GENERAL*/
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: #f5f1e8;
+    color: #3e4634;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* para header, main y footer */
+    min-height: 100vh; /*body me ocupa toda la pantalla */
+}
+
+.grid-layout > header {
+    grid-row: 1;
+}
+
+.grid-layout > main {
+    grid-row: 2;
+}
+
+.grid-layout > footer {
+    grid-row: 3;
+}
+
+a {
+    color: #3e4634;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: 'Libre Baskerville', serif;
+    color: #676b3f;
+}
+
+header {
+    background-color: #f0e7d9;
+    padding: 2vh;
+    display: flex;
+    justify-content:space-between; /*puedo separar los dos grupos*/
+    align-items: center;
+    flex-wrap: wrap; /*por el padding*/
+    position: sticky;
+    top:0
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 1vw; /*para definir el espacio entre logo y Lina*/
+}
+
+.branding h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header img.logo {
+    height: 10vh;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    font-size:medium;
+    display: flex;
+    gap: 2vw;
+    margin: 2vw;
+    padding: 0;
+    align-items: center;
+}
+
+footer {
+    background-color: #f0e7d9;
+    text-align: center;
+    padding: 2vh;
+    font-size: 0.9rem;
+    color: #3e4634;
+}
+
+footer img {
+    height: 3vh;
+    width: auto;
+    margin: 0 1vw;
+}
+
+nav ul li a:hover {
+    background-color: #d4d4b0;
+    border-radius: 3px;
+    padding: 0.2em 0.5em; 
+}
+
+button:active {
+    background-color: #8e8c6e;
+}
+
+a:visited {
+    color: #4e4e4e;
+}
+
+@media (max-width: 768px) {
+header {
+    padding: 1vh;
+}
+
+.navbar .container-fluid {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.branding {
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+}
+
+.branding h1 {
+    display: none;
+}
+
+.logo {
+    height: 8vh;
+}
+
+.navbar-toggler {
+    margin-left: auto;
+}
+}
+
+/* para que el boton de whatsapp quede flotando en todas las paginas lo tengo que sacar del main */
+.boton-whatsapp {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    width: 6vh;
+    height: 6vh;
+    z-index: 9999;
+}
+
+.boton-whatsapp img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*INDEX*/
+.introduccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+    padding: 3vh 3vw;
+}
+
+.texto-introduccion {
+    max-width: 40vw;
+}
+
+.carousel-inner {
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: auto;
+    height: 90vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+
+.introduccion {
+    flex-direction: column-reverse;
+}
+
+.texto-introduccion,
+.carousel-inner {
+    max-width: 90vw;
+}
+
+.texto-introduccion {
+    text-align: center;
+}
+}
+
+/*CONTACTO*/
+/* contenedor general */
+/* layout general para la página de contacto */
+.contacto-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    padding: 4vh 4vw;
+}
+
+.preguntas {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 3vh 3vw;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #a6a58a;      
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-button {
+    background-color: #ffffff;
+    color: #3e4634;
+    font-weight: bold;
+}
+
+.accordion-button:focus {
+    box-shadow: none; 
+    border-color: #a6a58a;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #ffffff;
+    color: #3e4634;
+    font-weight: bold;
+}
+
+.accordion-body {
+    background-color: #ffffff;
+    border-top: 1px solid #a6a58a;
+    color: #3e4634;
+}
+
+.formulario form {
+    background-color: #ffffff;
+    padding: 3vh 3vw;
+    margin: 0 auto;
+    border: 1px solid #a6a58a;
+    border-radius: 8px;
+    max-width: 800px;
+}
+
+form h2, form p {
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.grupo-campos {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+}
+
+.grupo-campos label {
+    font-weight: bold;
+    margin-bottom: 0.5vh;
+}
+
+.grupo-campos input:required,
+.grupo-campos textarea:required {
+    border-color: #a6a58a; 
+}
+
+/*:focus*/
+.grupo-campos input:focus,
+.grupo-campos textarea:focus {
+    outline: 2px solid #a6a58a;
+    background-color: #fefdf8;
+}
+
+/*:active*/
+form button:active {
+    background-color: #8c8b74;
+}
+
+/*:disabled*/
+form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+form button {
+    display: block;
+    margin: 2vh auto;
+    padding: 1vh 2vw;
+    border: none;
+    background-color: #a6a58a;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #8c8b74;
+}
+
+.info-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    align-items: start;
+}
+
+.mapa, .horarios {
+    background-color: #ffffff;
+    border: 1px solid #a6a58a;
+    border-radius: 8px;
+    padding: 2vh 2vw;
+}
+
+/* responsive para pantallas mas chicas */
+@media (max-width: 768px) {
+    .contacto-layout {
+        overflow-x: hidden;
+    }
+
+    .info-contacto {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2vh;
+    }
+
+    .info-contacto iframe {
+        width: 100% !important;
+        max-width: 100%;
+    }
+}
+
+
+/*el media es para aplicarlo solo en pantallas de mas de 768 px*/
+
+
+/*GALERIA*/
+/* si uso margin auto me quedan centradas horizontalmente las fotos USAR */
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2vw;
+    padding: 2vw;
+    justify-items: center;
+}
+
+.galeria-fotos img {
+    width: 100%;
+    max-width: 350px;
+    border: 2px solid #a6a58a;
+    border-radius: 8px;
+    height: auto;
+}
+
+/*me aseguro que en vista escritorio me quedan 3 columnas fijas */
+@media (min-width: 768px) {
+    .galeria-fotos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.Galeria-texto{
+    display: flex;
+    flex-direction: column;
+    text-align:left;
+    line-height: 1.6;
+    padding: 2vh;
+}
+
+.Galeria-texto h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.Galeria-texto p{
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+
+/*SOBRE NOSOTROS*/
+main section img {
+    width: 40vw;
+    height: auto;
+    margin: 2vh auto;
+    border: 2px solid #a6a58a;
+}
+
+.sobre-nosotros {
+    display: flex;
+    flex-direction: column;
+    gap: 8vh;
+    padding: 8vh 4vw;
+}
+
+.bloque {
+    display: flex;
+    align-items: center;
+    gap: 6vh;
+    flex-wrap: wrap;
+}
+
+.bloque.invertido {
+    flex-direction: row-reverse;
+}
+
+.bloque .imagen,
+.bloque .texto {
+    flex: 1 1 45%;
+}
+
+.bloque img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/*TIENDA*/
+.tienda-texto{
+    display: flex;
+    flex-direction: column;
+    text-align:left;
+    line-height: 1.6;
+    padding: 2vh;
+}
+
+.tienda-texto h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.tienda-texto p{
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.link-whatsapp:hover {
+    text-decoration: underline;
+}
+
+.info-envios{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.3;
+    padding: 2vh;
+    margin-bottom: 3rem
+}
+
+.info-envios h3{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.info-envios p{
+    text-align: center;
+    margin-bottom: 0.5rem 0;
+}
+
+/*no esta como el wireframe para la version escritorio pero se ve de forma más clara así, preguntar si puedo cambiar*/
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2vw;
+    padding: 2vw;
+}
+
+.item-producto {
+    background-color: #fff;
+    border: 1px solid #a6a58a;
+    border-radius: 8px;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.item-producto img {
+    width: 100%;
+    border-radius: 6px;
+    border: 2px solid #a6a58a;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .productos {
+        grid-template-columns: 1fr;
+    }
+}
