@@ -2,13 +2,15 @@
 
 header {
     background-color: v.$color-header-footer;
-    padding: 2vh;
+    padding: 2vh 1vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     position: sticky;
     top: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
     .branding {
@@ -33,7 +35,7 @@ nav ul {
     font-size: medium;
     display: flex;
     gap: 2vw;
-    margin: 2vw;
+    margin: 0;
     padding: 0;
     align-items: center;
 

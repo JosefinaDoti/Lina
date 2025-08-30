@@ -7,6 +7,11 @@ body {
   color: #3e4634;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 .grid-layout {
@@ -36,13 +41,15 @@ h1, h2, h3 {
 
 header {
   background-color: #f0e7d9;
-  padding: 2vh;
+  padding: 2vh 1vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   position: sticky;
   top: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .branding {
@@ -65,7 +72,7 @@ nav ul {
   font-size: medium;
   display: flex;
   gap: 2vw;
-  margin: 2vw;
+  margin: 0;
   padding: 0;
   align-items: center;
 }
@@ -279,12 +286,20 @@ form button:disabled {
   width: 100%;
   max-width: 350px;
   height: auto;
+  display: block;
   border: 2px solid #a6a58a;
   border-radius: 8px;
   object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  cursor: pointer;
+}
+.galeria-fotos img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
 }
 
-/*proxima entrega agregar animacion para que cada foto se agrande con el hover*/
+/*en celulares pasa a 1 columna*/
 @media (max-width: 768px) {
   .galeria-fotos {
     grid-template-columns: 1fr;
@@ -326,12 +341,19 @@ form button:disabled {
   text-align: center;
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .productos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2vw;
   padding: 2vw;
-  /*para la proxima animar cards tienda efecto que se levanten, buscar como*/
 }
 .productos .item-producto {
   background-color: #fff;
@@ -342,6 +364,15 @@ form button:disabled {
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.productos .item-producto:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 .productos .item-producto img {
   width: 100%;

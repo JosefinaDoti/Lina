@@ -20,6 +20,7 @@
     }
 }
 
+
 .galeria-fotos {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /*3 columnas en escritorio*/
@@ -31,15 +32,23 @@
         width: 100%;
         max-width: 350px;
         height: auto;
+        display: block;
         border: 2px solid #a6a58a;
         border-radius: 8px;
         object-fit: cover;
+
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        will-change: transform;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+        }
     }
 }
 
-/*proxima entrega agregar animacion para que cada foto se agrande con el hover*/
-
-//en celulares pasa a 1 columna
+/*en celulares pasa a 1 columna*/
 @include v.mobile {
     .galeria-fotos {
         grid-template-columns: 1fr;

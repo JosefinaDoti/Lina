@@ -11,7 +11,7 @@ $color-header-footer: #f0e7d9;
 $color-borde: #a6a58a;
 $color-boton-activo: #4e512f;
 
-//tipos de letra
+//tipos de letra//
 $fuente-titulo: 'Libre Baskerville', serif;
 $fuente-texto: 'Source Sans 3', sans-serif;
 
@@ -29,6 +29,11 @@ body {
     color: $color-principal;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 .grid-layout {
